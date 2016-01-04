@@ -8,38 +8,56 @@
 
 import SpriteKit
 
+// MARK: Constants
+
+let StartingTickLength = NSTimeInterval(1000)
+
 class GameScene: SKScene {
-    override func didMoveToView(view: SKView) {
-        /* Setup your scene here */
-        let myLabel = SKLabelNode(fontNamed:"Chalkduster")
-        myLabel.text = "Hello, World!"
-        myLabel.fontSize = 45
-        myLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame))
-        
-        self.addChild(myLabel)
+    
+    // MARK: Properties
+    
+    let gameLayer = SKNode()
+    
+    var lastTick: NSDate?
+    var tickLength = StartingTickLength
+    var tick: (() -> ())?
+   
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-       /* Called when a touch begins */
+    override init(size: CGSize) {
+        super.init(size: size)
         
-        for touch in touches {
-            let location = touch.locationInNode(self)
-            
-            let sprite = SKSpriteNode(imageNamed:"Spaceship")
-            
-            sprite.xScale = 0.5
-            sprite.yScale = 0.5
-            sprite.position = location
-            
-            let action = SKAction.rotateByAngle(CGFloat(M_PI), duration:1)
-            
-            sprite.runAction(SKAction.repeatActionForever(action))
-            
-            self.addChild(sprite)
-        }
+        
+        addChild(gameLayer)
+        
+        
     }
-   
+    
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
+        
+        guard let lastTick = lastTick else {
+            return
+        }
+        
+        let timePassed = lastTick.timeIntervalSinceNow * -1000
+        
+        if timePassed > tickLength {
+            updateLastTick()
+            tick?()
+        }
     }
+    
+    func startTicking() {
+        lastTick = NSDate()
+    }
+    
+    // set the last tick to the current date time
+    func updateLastTick() {
+        lastTick = NSDate()
+    }
+    
+    
 }

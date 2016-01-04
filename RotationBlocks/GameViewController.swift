@@ -11,35 +11,51 @@ import SpriteKit
 
 class GameViewController: UIViewController {
 
+    // MARK: Properties
+    var scene: GameScene!
+    var score = 0
+    
+    @IBOutlet weak var scoreLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        if let scene = GameScene(fileNamed:"GameScene") {
-            // Configure the view.
-            let skView = self.view as! SKView
-            skView.showsFPS = true
-            skView.showsNodeCount = true
-            
-            /* Sprite Kit applies additional optimizations to improve rendering performance */
-            skView.ignoresSiblingOrder = true
-            
-            /* Set the scale mode to scale to fit the window */
-            scene.scaleMode = .AspectFill
-            
-            skView.presentScene(scene)
-        }
+        
+        self.view.backgroundColor = .whiteColor()
+        
+        // Configure the view.
+        let skView = view as! SKView
+        skView.multipleTouchEnabled = false
+        
+        // Create and configure the scene
+        scene = GameScene(size: skView.bounds.size)
+        scene.scaleMode = .AspectFill
+        scene.tick = didTick
+        
+        scene.startTicking()
+        
     }
 
+    
+    func didTick() {
+        scoreLabel.text = "\(score)"
+        score++
+        print("something is ticking man")
+    }
+    
+    
     override func shouldAutorotate() -> Bool {
-        return true
-    }
+        if (UIDevice.currentDevice().orientation == UIDeviceOrientation.LandscapeLeft ||
+            UIDevice.currentDevice().orientation == UIDeviceOrientation.LandscapeRight ||
+            UIDevice.currentDevice().orientation == UIDeviceOrientation.Unknown) {
+                return false
+        }
+        else {
+            return true
+        }    }
 
     override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-        if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
-            return .AllButUpsideDown
-        } else {
-            return .All
-        }
+        return [UIInterfaceOrientationMask.Portrait ,UIInterfaceOrientationMask.PortraitUpsideDown]
     }
 
     override func didReceiveMemoryWarning() {

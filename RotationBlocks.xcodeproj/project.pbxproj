@@ -397,6 +397,7 @@
 				1997EBE61C36B84400F4CBCF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1997EBE71C36B84400F4CBCF /* Build configuration list for PBXNativeTarget "RotationBlocksTests" */ = {
 			isa = XCConfigurationList;
@@ -405,6 +406,7 @@
 				1997EBE91C36B84400F4CBCF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
