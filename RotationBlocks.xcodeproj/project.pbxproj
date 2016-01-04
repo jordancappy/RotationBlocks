@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		194C02591C3A6C2800052661 /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194C02581C3A6C2800052661 /* Shape.swift */; };
+		194C025B1C3A6C3000052661 /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194C025A1C3A6C3000052661 /* Block.swift */; };
 		1997EBC71C36B84300F4CBCF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1997EBC61C36B84300F4CBCF /* AppDelegate.swift */; };
 		1997EBC91C36B84300F4CBCF /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1997EBC81C36B84300F4CBCF /* GameScene.sks */; };
 		1997EBCB1C36B84300F4CBCF /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1997EBCA1C36B84300F4CBCF /* GameScene.swift */; };
@@ -28,6 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		194C02581C3A6C2800052661 /* Shape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shape.swift; sourceTree = "<group>"; };
+		194C025A1C3A6C3000052661 /* Block.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
 		1997EBC31C36B84300F4CBCF /* RotationBlocks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RotationBlocks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1997EBC61C36B84300F4CBCF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1997EBC81C36B84300F4CBCF /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -84,6 +88,8 @@
 				1997EBC61C36B84300F4CBCF /* AppDelegate.swift */,
 				1997EBC81C36B84300F4CBCF /* GameScene.sks */,
 				1997EBCA1C36B84300F4CBCF /* GameScene.swift */,
+				194C02581C3A6C2800052661 /* Shape.swift */,
+				194C025A1C3A6C3000052661 /* Block.swift */,
 				1997EBCC1C36B84300F4CBCF /* GameViewController.swift */,
 				1997EBCE1C36B84300F4CBCF /* Main.storyboard */,
 				1997EBD11C36B84300F4CBCF /* Assets.xcassets */,
@@ -206,7 +212,9 @@
 			files = (
 				1997EBCB1C36B84300F4CBCF /* GameScene.swift in Sources */,
 				1997EBCD1C36B84300F4CBCF /* GameViewController.swift in Sources */,
+				194C025B1C3A6C3000052661 /* Block.swift in Sources */,
 				1997EBC71C36B84300F4CBCF /* AppDelegate.swift in Sources */,
+				194C02591C3A6C2800052661 /* Shape.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

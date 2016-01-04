@@ -34,10 +34,18 @@ class GameViewController: UIViewController {
         
         scene.startTicking()
         
+        scene.addNewShapeToScene()
+        
+        
+        // present that scene to the woooorld
+        skView.presentScene(scene)
+        
     }
-
     
     func didTick() {
+        scene.moveShape(Shape()){
+            print("good job it moved")
+        }
         scoreLabel.text = "\(score)"
         score++
         print("something is ticking man")
@@ -52,7 +60,8 @@ class GameViewController: UIViewController {
         }
         else {
             return true
-        }    }
+        }
+    }
 
     override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
         return [UIInterfaceOrientationMask.Portrait ,UIInterfaceOrientationMask.PortraitUpsideDown]
